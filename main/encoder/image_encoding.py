@@ -43,10 +43,10 @@ densenet.preprocess_input is used to preprocess the data according to the requir
 
 if __name__ == '__main__':  
     
-    recipes_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data\train")
+    recipes_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data\train")
     recipes_list.sort(key=lambda item:int(item.split("_")[0]))
-    train_names_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data\train")
-    test_names_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data\test")
+    train_names_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data\train")
+    test_names_list=os.listdir(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data\test")
     encoded_list=[]
     recipe_names=[]
     count=0
@@ -54,14 +54,14 @@ if __name__ == '__main__':
         name=recipes_list[i]
         recipe_name=name.split("_")[1]
         recipe_index=name.split("_")[0]
-        train_path=os.path.join(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data\train",name)
+        train_path=os.path.join(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data\train",name)
         train_names_list=os.listdir(train_path)
         for train_name in train_names_list:
             image_path=os.path.join(train_path,train_name)
             encoding = feature_encoding(image_path)
             encoded_list.append(encoding)
             recipe_names.append(name)
-        test_path=os.path.join(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data\test",name)
+        test_path=os.path.join(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data\test",name)
         test_names_list=os.listdir(test_path)    
         for test_name in test_names_list:
             image_path=os.path.join(test_path,test_name)
@@ -70,9 +70,9 @@ if __name__ == '__main__':
             recipe_names.append(name)
     print(len(recipe_names),len(encoded_list))
     
-    with open(r'C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\encoder\encodings.pkl', 'wb') as file:
+    with open(r'C:\Users\aditi\OneDrive\Desktop\DeepChef\main\encoder\encodings.pkl', 'wb') as file:
         pickle.dump(encoded_list, file)
-    with open(r'C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\encoder\encoding_name.pkl', 'wb') as file:
+    with open(r'C:\Users\aditi\OneDrive\Desktop\DeepChef\main\encoder\encoding_name.pkl', 'wb') as file:
         pickle.dump(recipe_names, file)   
     
     

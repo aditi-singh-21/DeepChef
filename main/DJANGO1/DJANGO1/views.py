@@ -26,10 +26,10 @@ def home(request):
             )
             queryset=recipe.objects.all()
             queryset=queryset.last().og_image
-            DIR= "C:\\Users\\aditi\\OneDrive\\Desktop\\DeepChef Personal\\main\\DJANGO1\\public\\static"
+            DIR= "C:\\Users\\aditi\\OneDrive\\Desktop\\DeepChef\\main\\DJANGO1\\public\\static"
             c=str(queryset)
             similar_recipes=input_recipe(os.path.join(DIR,c))
-            json_path=r'C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\recipes_data\recipes.json'
+            json_path=r'C:\Users\aditi\OneDrive\Desktop\DeepChef\main\recipes_data\recipes.json'
             x=json.load(open(json_path))
             for i in range(len(similar_recipes)):
                 name=similar_recipes[i]
@@ -47,7 +47,7 @@ def home(request):
     else:
         form=Image_Upload()
         
-    return render(request, r'C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\DJANGO1\deepchef\templates\deepchef\home.html', {'form': form, 'recipe': queryset,
+    return render(request, r'C:\Users\aditi\OneDrive\Desktop\DeepChef\main\DJANGO1\deepchef\templates\deepchef\home.html', {'form': form, 'recipe': queryset,
                                                 'recipe_list_to_return': return_similar_recipes[:5],
                                                 'similar_recipe_list': return_similar_recipes[5:10]})      
     

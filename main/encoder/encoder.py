@@ -8,9 +8,9 @@ from scipy.spatial.distance import cosine
 
 cnn_model=densenet.DenseNet201(include_top= False ,weights='imagenet', input_shape=(256,256,3),pooling='avg',classes= 350) 
 
-with open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\encoder\encodings.pkl",'rb') as f:
+with open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\main\encoder\encodings.pkl",'rb') as f:
     encodings_list=pickle.load(f,encoding='utf-8')
-with open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\encoder\encoding_name.pkl",'rb') as f:
+with open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\main\encoder\encoding_name.pkl",'rb') as f:
     encoding_name_list=pickle.load(f,encoding='utf-8')
     
 def feature_encoding(url):
