@@ -1,3 +1,6 @@
+image_data/
+C:/Users/aditi/OneDrive/Desktop/DeepChef Personal/image_data
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,7 +8,14 @@ __pycache__/
 
 # C extensions
 *.so
-
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+ADITI/venv
 # Distribution / packaging
 .Python
 build/
@@ -129,7 +139,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+ADITI/venv
+venv
 # Spyder project settings
 .spyderproject
 .spyproject
