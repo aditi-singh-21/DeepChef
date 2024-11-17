@@ -40,9 +40,9 @@ try:
     extra_images=5
     new_driver_count=3
     
-    df = pd.read_csv(r'C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\recipes_data\recipes.csv',skiprows= start,nrows=count,names=['name','link'])
+    df = pd.read_csv(r'C:\Users\aditi\OneDrive\Desktop\DeepChef\main\recipes_data\recipes.csv',skiprows= start,nrows=count,names=['name','link'])
     
-    log_file= open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\recipes_data\recipes_logfiles.txt","a")
+    log_file= open(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\main\recipes_data\recipes_logfiles.txt","a")
     
     csv_length=len(df['name'])
     i=0
@@ -115,8 +115,8 @@ try:
                                     print("Failed Duplicate")
                                     continue
             time.sleep(7)
-        logfile_urls(image_urls,train_images_count,r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\main\recipes_data\recipes_logfiles.txt")
-        download_images(r"C:\Users\aditi\OneDrive\Desktop\DeepChef Personal\image_data",recipe_name,start+i,image_urls,train_images_count)
+        logfile_urls(image_urls,train_images_count,r"C:\Users\aditi\OneDrive\Desktop\DeepChef\main\recipes_data\recipes_logfiles.txt")
+        download_images(r"C:\Users\aditi\OneDrive\Desktop\DeepChef\image_data",recipe_name,start+i,image_urls,train_images_count)
         
         time.sleep(7)
         i=i+1
